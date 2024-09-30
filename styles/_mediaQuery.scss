@@ -1,0 +1,91 @@
+$breakpoint: (
+  desktop: 1440px,
+  tablet: 834px,
+  mobile: 390px
+);
+
+
+@mixin breakpointMax($size) {
+  $breakpoint-value: map-get($breakpoint, $size);
+
+  @media screen and (max-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+@mixin breakpointMin($size) {
+  $breakpoint-value: map-get($breakpoint, $size);
+
+  @media screen and (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+@include breakpointMax(tablet) {
+  .header {
+    padding: 1rem 2rem;
+  }
+
+  .hero {
+    padding: 0 2rem;
+  }
+
+  .input {
+    padding: 0 2rem;
+  }
+
+  .faq {
+    padding: 0 2rem;
+  }
+
+  .footer {
+    padding: 0 2rem;
+  }
+}
+
+@include breakpointMax(mobile) {
+  .header {
+    padding: 1rem 1rem;
+  }
+
+  .logo__text {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    display: none;
+
+    &__menu{
+      display: initial;
+      background-color: none;
+    }
+  }
+
+  .hero {
+    padding: 0 1rem;
+
+    &__title {
+      font-size: 2.75rem;
+    }
+  }
+
+  .input {
+    padding: 0 1rem;
+
+    &__container {
+      flex-wrap: wrap;
+    }
+  }
+
+  .faq {
+    padding: 0 1rem;
+  }
+
+  .footer {
+    padding: 0 1rem;
+
+    &__title {
+      font-size: 2rem;
+    }
+  }
+}

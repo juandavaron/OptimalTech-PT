@@ -1,0 +1,62 @@
+// Base Reset
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: $color-backgroundPage;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+  gap: 2rem;
+  height: 100vh;
+}
+
+body,
+button,
+input,
+textarea {
+  font-family: $font-body;
+}
+
+h1,
+h2,
+h3 {
+  font-family: $font-heading;
+  color: var(--color-title);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
